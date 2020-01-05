@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>E-commerce project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/slick.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<style>
+		.checked {
+  color: orange;
+}
+img.img6 {
+    position: relative;
+}
+.latest {
+    position: absolute;
+	color: yellow;
+    top: 28px;
+    left: 44px;
+}
+		.carousel-caption {
+			top: 148px;
+		}
+
+		.img1 {
+			position: relative;
+		}
+
+		.car1 {
+			position: absolute;
+			left: 86px;
+			top: 30px;
+			color: red;
+		}
+
+		.car2 {
+			position: absolute;
+			left: 86px;
+			top: 30px;
+			color: red;
+		}
+
+
+		div.gallery {
+			margin: 5px;
+			/* border: 1px solid rgb(236, 234, 234); */
+			float: left;
+			width: 180px;
+			height: 330px;
+		}
+
+		div.gallery1 {
+			margin: 5px;
+			float: left;
+			width: 100px;
+			height: 150px;
+		}
+
+		div.gallery:hover {
+			border: 1px solid #777;
+		}
+
+		div.gallery img {
+			width: 100%;
+			height: auto;
+		}
+
+		p.desc {
+			padding: 4px;
+			text-align: center;
+		}
+
+		/* Slider */
+		.slick-slide {
+			margin: 0px 20px;
+		}
+
+		.slick-slide img {
+			width: 100%;
+		}
+
+		.slick-slider {
+			position: relative;
+			display: block;
+			box-sizing: border-box;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			-webkit-touch-callout: none;
+			-khtml-user-select: none;
+			-ms-touch-action: pan-y;
+			touch-action: pan-y;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		.slick-list {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+		}
+
+		.slick-list:focus {
+			outline: none;
+		}
+
+		.slick-list.dragging {
+			cursor: pointer;
+			cursor: hand;
+		}
+
+		.slick-slider .slick-track,
+		.slick-slider .slick-list {
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			-ms-transform: translate3d(0, 0, 0);
+			-o-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+
+		.slick-track {
+			position: relative;
+			top: 0;
+			left: 0;
+			display: block;
+		}
+
+		.slick-track:before,
+		.slick-track:after {
+			display: table;
+			content: '';
+		}
+
+		.slick-track:after {
+			clear: both;
+		}
+
+		.slick-loading .slick-track {
+			visibility: hidden;
+		}
+
+		.slick-slide {
+			display: none;
+			float: left;
+			height: 100%;
+			min-height: 1px;
+		}
+
+		[dir='rtl'] .slick-slide {
+			float: right;
+		}
+
+		.slick-slide img {
+			display: block;
+		}
+
+		.slick-slide.slick-loading img {
+			display: none;
+		}
+
+		.slick-slide.dragging img {
+			pointer-events: none;
+		}
+
+		.slick-initialized .slick-slide {
+			display: block;
+		}
+
+		.slick-loading .slick-slide {
+			visibility: hidden;
+		}
+
+		.slick-vertical .slick-slide {
+			display: block;
+			height: auto;
+			border: 1px solid transparent;
+		}
+
+		.slick-arrow.slick-hidden {
+			display: none;
+		}
+
+		.carousel {
+			width: 100%;
+		}
+
+		.slide-box {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@media (min-width: 576px) and (max-width: 767.98px) {
+			.slide-box img {
+				-ms-flex: 0 0 50%;
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+		}
+
+		@media (min-width: 768px) and (max-width: 991.98px) {
+			.slide-box img {
+				-ms-flex: 0 0 33.3333%;
+				flex: 0 0 33.3333%;
+				max-width: 33.3333%;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.slide-box img {
+				-ms-flex: 0 0 25%;
+				flex: 0 0 25%;
+				max-width: 25%;
+			}
+		}
+
+		.carousel-caption {
+			background-color: rgba(0, 0, 0, 0.5);
+			padding: 20px;
+			border-radius: .5rem;
+		}
+
+
+		#img5 {
+			border-radius:50%;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- navigation -->
+
+	<!-- example 1 - using absolute position for center -->
+	<nav class="navbar navbar-light navbar-expand-md bg-warning justify-content-center fixed p-5">
+		<a href="/" class="navbar-brand d-flex w-50 mr-auto"><span style="font-weight: bold;">FOX WOOD.</span></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+			<ul class="navbar-nav w-100 justify-content-center">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact us</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+				<li class="nav-item">
+					<div class="navbar-nav ml-auto">
+						<button type="button" data-toggle="modal" data-target="#cart" style="border:none;background-color: transparent;"> <span
+							class="glyphicon glyphicon-shopping-cart"></span><img src="assets/images/cart.png"
+							alt="cart" height="55px" width="55px">
+						<p id="count" class="total-count" style="color:red;font-weight:bold;margin-top: -58px;">0</p>
+					</button>
+					</div>
+				</li>
+			
+			</ul>
+		</div>
+	</nav>
+
+
+    
+
+    
+	<!-- slide share add to cart -->
+	<div class="jumbotron  bg-white">
+
+		<div class="continer">
+			<div class="row">
+			<div class="col-sm-12">
+				<h1 style="text-align:center;">Best Car Spare Parts</h1>
+			</div>
+			</div>
+			</div>
+
+	
+
+	<div class="row" style="margin-top:30px;">
+		<div class="container">
+			<section class="customer-logos slider">
+
+                <div class="row">
+<div class="col-sm-3">
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product1.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc" class="card-title">Sofa1</p>
+        <p class="desc" class="card-text">$1000.00</p>
+        <p class="desc"><button type="button" data-name="sofa1" data-price="1000.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+      
+</div>
+
+<div class="col-sm-3">
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product2.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc">Sofa2</p>
+        <p class="desc">$1200.00</p>
+        <p class="desc"><button type="button" data-name="sofa2" data-price="1200.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+</div>
+
+
+<div class="col-sm-3">
+
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product3.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc">Sofa3</p>
+        <p class="desc">$1300.00</p>
+        <p class="desc"><button type="button" data-name="sofa3" data-price="1300.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+</div>
+
+
+<div class="col-sm-3">
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product4.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc">Sofa4</p>
+        <p class="desc">$1050.00</p>
+        <p class="desc"><button type="button" data-name="sofa4" data-price="1050.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+</div>
+</div> 
+			</section>
+		</div>
+    </div>
+    
+
+    
+	<div class="row" style="margin-top:30px;">
+		<div class="container">
+			<section class="customer-logos slider">
+
+                <div class="row">
+<div class="col-sm-3">
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product1.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc" class="card-title">Sofa1</p>
+        <p class="desc" class="card-text">$1000.00</p>
+        <p class="desc"><button type="button" data-name="sofa1" data-price="1000.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+      
+</div>
+
+<div class="col-sm-3">
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product2.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc">Sofa2</p>
+        <p class="desc">$1200.00</p>
+        <p class="desc"><button type="button" data-name="sofa2" data-price="1200.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+</div>
+
+
+<div class="col-sm-3">
+
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product3.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc">Sofa3</p>
+        <p class="desc">$1300.00</p>
+        <p class="desc"><button type="button" data-name="sofa3" data-price="1300.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+</div>
+
+
+<div class="col-sm-3">
+    <div class="gallery" class="slide">
+        <a target="_blank" href="product4.html">
+          <img src="assets/images/img1.jpg" alt="img1"  height="200px"width="100%">
+        </a>
+        <p class="desc">Sofa4</p>
+        <p class="desc">$1050.00</p>
+        <p class="desc"><button type="button" data-name="sofa4" data-price="1050.00" class="add-to-cart btn btn-primary">Add To Cart</button></p>
+      </div>
+</div>
+</div> 
+			</section>
+		</div>
+	</div>
+</div>
+
+
+	<!-- footer -->
+	<div class="jumbotron bg-light">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-sm-2">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="#"
+								style="font-weight: bold;color: rgb(70, 66, 66);font-size: 20px;">CONTACT US</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(78, 74, 74);">car spares Store
+								uffin Street Pufville India
+								surat</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(100, 92, 92);">123-456-789</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(95, 89, 89);">demo@demo.com</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-4">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="#"
+								style="font-weight: bold;color: rgb(70, 66, 66);font-size: 20px;">NEWSLETTER</a>
+						</li>
+						<li class="nav-item">
+							<p class="nav-link" style="color:rgb(95, 89, 89);">You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+						</li>
+						<li class="nav-item">
+							<p class="nav-link" style="color:rgb(88, 83, 83);">
+								<form>
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" placeholder="Enter Email Address">
+										<div class="input-group-append">
+											<button class="btn btn-danger" type="button">SUBSCRIBE</button>
+										</div>
+									</div>
+								</form>
+							</p>
+						</li>
+						<li class="nav-item">
+							<p class="nav-link" style="color:rgb(95, 89, 89);">FOLLOW US</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="#"
+								style="font-weight: bold;color: rgb(70, 66, 66);font-size: 20px;">INFORMATION
+							</a>
+						</li>
+						<li class="nav-item" style="margin-top:30px;">
+							<a class="nav-link" href="#" style="color:rgb(78, 74, 74);">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(100, 92, 92);">Delivery Information</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(95, 89, 89);">Privacy Policy</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(88, 83, 83);">Terms & Conditions</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(88, 83, 83);">Brands</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="#"
+								style="font-weight: bold;color: rgb(70, 66, 66);font-size: 20px;">MY ACCOUNT</a>
+						</li>
+						<li class="nav-item" style="margin-top:30px;">
+							<a class="nav-link" href="#" style="color:rgb(78, 74, 74);">My Account</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(100, 92, 92);">Order History</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(95, 89, 89);">Wish List</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(88, 83, 83);">Newsletter</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(88, 83, 83);">Specials</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-2">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link" href="#"
+								style="font-weight: bold;color: rgb(70, 66, 66);font-size: 20px;">CUSTOMER SERVICE
+							</a>
+						</li>
+						<li class="nav-item" style="margin-top:30px;">
+							<a class="nav-link" href="#" style="color:rgb(78, 74, 74);">Contact Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(100, 92, 92);">Returns</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(95, 89, 89);">Site Map</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(88, 83, 83);">Gift Certificates</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" style="color:rgb(88, 83, 83);">Affiliate</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9">
+				<p>Powered By OpenCart Foxwood © 2020
+				</p>
+			</div>
+			<div class="col-sm-3">
+				<img src="assets/images/footer1.png" alt="footer" height="50px" width="200px">
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="show-cart table">
+
+					</table>
+					<div>Total price: $<span class="total-cart"></span></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Order now</button>
+				</div>
+			</div>
+		</div>
+	</div>
+                  
+                
+    </body>
+    </html>
+
+
+    
+<script>
+
+    // ************************************************
+    // Shopping Cart API
+    // ************************************************
+    
+    var shoppingCart = (function() {
+      // =============================
+      // Private methods and propeties
+      // =============================
+      cart = [];
+      
+      // Constructor
+      function Item(name, price, count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+      }
+      
+      // Save cart
+      function saveCart() {
+        sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+      }
+      
+        // Load cart
+      function loadCart() {
+        cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+      }
+      if (sessionStorage.getItem("shoppingCart") != null) {
+        loadCart();
+      }
+      
+    
+      // =============================
+      // Public methods and propeties
+      // =============================
+      var obj = {};
+      
+      // Add to cart
+      obj.addItemToCart = function(name, price, count) {
+        for(var item in cart) {
+          if(cart[item].name === name) {
+            cart[item].count ++;
+            saveCart();
+            return;
+          }
+        }
+        var item = new Item(name, price, count);
+        cart.push(item);
+        saveCart();
+      }
+      // Set count from item
+      obj.setCountForItem = function(name, count) {
+        for(var i in cart) {
+          if (cart[i].name === name) {
+            cart[i].count = count;
+            break;
+          }
+        }
+      };
+      // Remove item from cart
+      obj.removeItemFromCart = function(name) {
+          for(var item in cart) {
+            if(cart[item].name === name) {
+              cart[item].count --;
+              if(cart[item].count === 0) {
+                cart.splice(item, 1);
+              }
+              break;
+            }
+        }
+        saveCart();
+      }
+    
+      // Remove all items from cart
+      obj.removeItemFromCartAll = function(name) {
+        for(var item in cart) {
+          if(cart[item].name === name) {
+            cart.splice(item, 1);
+            break;
+          }
+        }
+        saveCart();
+      }
+    
+      // Clear cart
+      obj.clearCart = function() {
+        cart = [];
+        saveCart();
+      }
+    
+      // Count cart 
+      obj.totalCount = function() {
+        var totalCount = 0;
+        for(var item in cart) {
+          totalCount += cart[item].count;
+        }
+        return totalCount;
+      }
+    
+      // Total cart
+      obj.totalCart = function() {
+        var totalCart = 0;
+        for(var item in cart) {
+          totalCart += cart[item].price * cart[item].count;
+        }
+        return Number(totalCart.toFixed(2));
+      }
+    
+      // List cart
+      obj.listCart = function() {
+        var cartCopy = [];
+        for(i in cart) {
+          item = cart[i];
+          itemCopy = {};
+          for(p in item) {
+            itemCopy[p] = item[p];
+    
+          }
+          itemCopy.total = Number(item.price * item.count).toFixed(2);
+          cartCopy.push(itemCopy)
+        }
+        return cartCopy;
+      }
+    
+      // cart : Array
+      // Item : Object/Class
+      // addItemToCart : Function
+      // removeItemFromCart : Function
+      // removeItemFromCartAll : Function
+      // clearCart : Function
+      // countCart : Function
+      // totalCart : Function
+      // listCart : Function
+      // saveCart : Function
+      // loadCart : Function
+      return obj;
+    })();
+    
+    
+    // *****************************************
+    // Triggers / Events
+    // ***************************************** 
+    // Add item
+    $('.add-to-cart').click(function(event) {
+      event.preventDefault();
+      var name = $(this).data('name');
+      var price = Number($(this).data('price'));
+      shoppingCart.addItemToCart(name, price, 1);
+      displayCart();
+    });
+    
+    // Clear items
+    $('.clear-cart').click(function() {
+      shoppingCart.clearCart();
+      displayCart();
+    });
+    
+    
+    function displayCart() {
+      var cartArray = shoppingCart.listCart();
+      var output = "";
+      for(var i in cartArray) {
+        output += "<tr>"
+          + "<td>" + cartArray[i].name + "</td>" 
+          + "<td>(" + cartArray[i].price + ")</td>"
+          + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+          + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+          + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+          + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"
+          + " = " 
+          + "<td>" + cartArray[i].total + "</td>" 
+          +  "</tr>";
+      }
+      $('.show-cart').html(output);
+      $('.total-cart').html(shoppingCart.totalCart());
+      $('.total-count').html(shoppingCart.totalCount());
+    }
+    
+    // Delete item button
+    
+    $('.show-cart').on("click", ".delete-item", function(event) {
+      var name = $(this).data('name')
+      shoppingCart.removeItemFromCartAll(name);
+      displayCart();
+    })
+    
+    
+    // -1
+    $('.show-cart').on("click", ".minus-item", function(event) {
+      var name = $(this).data('name')
+      shoppingCart.removeItemFromCart(name);
+      displayCart();
+    })
+    // +1
+    $('.show-cart').on("click", ".plus-item", function(event) {
+      var name = $(this).data('name')
+      shoppingCart.addItemToCart(name);
+      displayCart();
+    })
+    
+    // Item count input
+    $('.show-cart').on("change", ".item-count", function(event) {
+       var name = $(this).data('name');
+       var count = Number($(this).val());
+      shoppingCart.setCountForItem(name, count);
+      displayCart();
+    });
+    
+    displayCart();
+    
+        </script>
